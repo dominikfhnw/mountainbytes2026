@@ -1,0 +1,31 @@
+Orange vs Green
+
+128 byte framebuffer demo for Linux/x86
+
+Credits
+Code/Graphics by dominikr
+
+Tools used:
+* nasm
+* vim
+* custom macro library
+
+
+Instructions:
+
+Framebuffer permissions:
+  The current user needs permissions to access /dev/fb0
+  For most distros this means being in the `video` group
+  Check with `id | grep video`
+  To add framebuffer permissions for current user:
+  sudo usermod -a -G video $(whoami)
+  And then log out and in again
+
+
+Running:
+  Switch to a TTY with ctrl-alt-f2..6 (depending on distro)
+  If your distro has a blinking cursor: switch it off with `tput civis`
+  Check your framebuffer resolution with `fbset`
+  Run the version that corresponds to your screen resolution
+  There's also `orangevsgreen-autosize`, which should work with any resolution,
+  but does not fit in 128b anymore
